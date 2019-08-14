@@ -25,10 +25,6 @@ except sr.RequestError as e:
 
 string=r.recognize_google(audio)
 
-'''if("stupid" or "much" in string):
-    r=tkinter.Tk()
-    r.title("Happy!")
-    #print("Wooow!")'''
 
 analysis = TextBlob(' '.join(re.sub("(@[A-Za-z0-9]+)|([^0-9A-Za-z \t]) |(\w+:\/\/\S+)", " ", string).split())) 
 if analysis.sentiment.polarity > 0: 
